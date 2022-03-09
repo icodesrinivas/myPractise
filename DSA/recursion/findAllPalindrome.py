@@ -1,0 +1,1 @@
+def findAllPalindrome(string):
