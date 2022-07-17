@@ -62,17 +62,15 @@ def subArraySum2(arr, n, s):
     i = 0
     Sum = arr[0]
     for j in range(1, n):
-        print('i', i)
         Sum = Sum + arr[j]
         while Sum > s and i < j:
             Sum = Sum - arr[i]
             i += 1
         if Sum == s:
             return [i + 1, j + 1]
-        print('j', j)
     return [-1]
 
 l = '11,2,13,4,15,6,17,8,19,10'.split(',')
 l = list(map(int, l))
 
-print(subArraySum2(l, 10, 21))
+print(subArraySum2(l, 10, 32))
