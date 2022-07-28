@@ -16,9 +16,26 @@ smallest string possible.
 
 def chooseAndSwap(A):
 
-    pass
+    s = sorted(set(A))
+    swap_a = None
+    swap_b = None
+    for item in A:
+        if ord(item) > ord(s[0]):
+            swap_a = item
+            swap_b = s[0]
+            break
+        elif ord(item) == ord(s[0]): s.pop(0)
+        if len(s) == 0: return A
 
-print(chooseAndSwap('abba'))
+    A = list(A)
+    for index in range(len(A)):
+        if A[index] == swap_a: A[index] = swap_b
+        elif A[index] == swap_b: A[index] = swap_a
+
+    return "".join(A)
+
+
+print(chooseAndSwap('kkxo'))
 
 
 
